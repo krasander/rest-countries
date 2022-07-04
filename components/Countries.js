@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import Country from './Country';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import Country from './Country'
 
 
 export default function NestedGrid({ countries }) {
@@ -19,5 +19,5 @@ export default function NestedGrid({ countries }) {
         ))}
       </Grid>
     </Box>
-  );
+  )
 }

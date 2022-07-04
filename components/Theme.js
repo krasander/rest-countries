@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { createTheme } from '@mui/material/styles';
+import * as React from 'react'
+import { createTheme } from '@mui/material/styles'
 
 
 export default function getThemes() {
@@ -10,7 +10,7 @@ export default function getThemes() {
                     mode: 'dark',
                 },
             }), [],
-      );
+      )
     
     const lightTheme = React.useMemo(
         () =>
@@ -19,7 +19,7 @@ export default function getThemes() {
                     mode: 'light',
                 },
             }), [],
-    );
+    )
 
     return {darkTheme, lightTheme}
 }

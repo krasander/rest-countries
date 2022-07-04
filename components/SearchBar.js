@@ -1,14 +1,12 @@
-import { useMemo, useEffect } from "react";
-import TextField from "@mui/material/TextField";
-import _ from 'lodash';
+import * as React from 'react'
+import _ from 'lodash'
+import TextField from '@mui/material/TextField'
+
 
 export default function SearchBar({ allCountries, onSearchQuery }) {
     function onSearch(event) {
-        if (!event) {
-            return
-        }
         const searchTerm = event.target.value
-        if (searchTerm === "") {
+        if (searchTerm === '') {
             onSearchQuery(allCountries)
         } else {
             // Search is case insensitive
@@ -17,26 +15,26 @@ export default function SearchBar({ allCountries, onSearchQuery }) {
         }
     }
 
-    const debouncedChangeHandler = useMemo(
-        () => _.debounce(onSearch, 300), []);
+    const debouncedChangeHandler = React.useMemo(
+        () => _.debounce(onSearch, 300), [])
     
-    useEffect(() => {
+    React.useEffect(() => {
         // Clean up the debounce handler because we don't want it to run when component has unmounted
         return () => {
-          debouncedChangeHandler.cancel();
+          debouncedChangeHandler.cancel()
         }
-    }, []);
+    }, [])
     
     return (
         <form>
             <TextField sx={{ ml: 175, flexGrow: 1 }}
-                id="search-bar"
-                className="text"
-                onInput={(event) => {debouncedChangeHandler(event)}}
-                label="Search for a country"
-                variant="outlined"
-                placeholder="Search..."
-                size="small"
+                id='search-bar'
+                className='text'
+                onInput={(event) => { debouncedChangeHandler(event) }}
+                label='Search for a country'
+                variant='outlined'
+                placeholder='Search...'
+                size='small'
             />
         </form>
     )

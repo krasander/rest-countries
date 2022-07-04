@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from 'react'
+import Box from '@mui/material/Box'
+import { ThemeProvider } from '@mui/material/styles'
+import { fetchCountries } from '../lib/fetchCountries'
+import { CssBaseline, Toolbar } from '@mui/material'
+import getThemes from '../components/Theme'
 import Header from '../components/Header'
-import NestedGrid from '../components/NestedGrid'
+import Countries from '../components/Countries'
 import Regions from '../components/Regions'
-import SearchBar from '../components/SearchBar';
-import Box from '@mui/material/Box';
-import { ThemeProvider } from '@mui/material/styles';
-import { fetchCountries } from '../lib/fetchCountries';
-import { CssBaseline, Toolbar } from '@mui/material';
-import getThemes from '../components/Theme';
+import SearchBar from '../components/SearchBar'
 
 
 export async function getStaticProps() {
@@ -44,12 +44,12 @@ export default function App({ fetchedCountries }) {
       <CssBaseline/>
       <Header currentTheme={ currentTheme} setCurrentTheme={ updateTheme } />
       <Box sx={{ flexGrow: 1 }}>
-          <Toolbar>
+          <Toolbar sx={{ flexGrow: 1, display: 'flex' }}>
             <Regions sx={{ mr: 2, mx: 200 }} allCountries={allCountries} onRegionChange={setCountries} />
             <SearchBar sx={{ mr: 200 }} allCountries={allCountries} onSearchQuery={setCountries}/>
           </Toolbar>
       </Box>
-      <NestedGrid countries={countries} />
+      <Countries countries={countries} />
      </ThemeProvider>
   )
 }

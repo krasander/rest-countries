@@ -1,16 +1,14 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import viewCountry from '../lib/viewCountry';
-import { useTheme } from '@mui/material/styles';
+import * as React from 'react'
+import Card from '@mui/material/Card'
+import CardActions from '@mui/material/CardActions'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
+import viewCountry from '../lib/viewCountry'
 
 
 export default function Country({ country }) {
-  const theme = useTheme()
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardMedia
@@ -38,5 +36,5 @@ export default function Country({ country }) {
         <Button onClick={() => viewCountry(country.alpha3Code)} size="small">View</Button>
       </CardActions>
     </Card>
-  );
+  )
 }
