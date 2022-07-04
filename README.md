@@ -19,4 +19,4 @@ Some remarks and tasks that should be addressed next:
 
 # Deploy
 
-Deploy to Vercel coming soon
+Project is deployed on [Vercel](https://rest-countries-kappa.vercel.app/)
